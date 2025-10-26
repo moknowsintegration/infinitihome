@@ -13,6 +13,146 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
         
+        <!-- Google Analytics 4 -->
+        <!-- TO ACTIVATE: Replace G-XXXXXXXXXX with your actual GA4 Measurement ID in .env -->
+        <script>
+            window.GA_TRACKING_ID = '%REACT_APP_GA_TRACKING_ID%';
+            if (window.GA_TRACKING_ID && window.GA_TRACKING_ID !== '%REACT_APP_GA_TRACKING_ID%') {
+                const script = document.createElement('script');
+                script.async = true;
+                script.src = `https://www.googletagmanager.com/gtag/js?id=${window.GA_TRACKING_ID}`;
+                document.head.appendChild(script);
+                
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                window.gtag = gtag;
+                gtag('js', new Date());
+                gtag('config', window.GA_TRACKING_ID);
+            }
+        </script>
+        
+        <!-- JSON-LD Schema Markup for LocalBusiness -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "HomeAndConstructionBusiness",
+          "name": "INFINITI Home Care Enterprise",
+          "image": "https://customer-assets.emergentagent.com/job_doc-upload-portal/artifacts/cbdxw1p3_Infiniti%20purple%20logo%20website.png",
+          "@id": "https://infinitihomecare.com",
+          "url": "https://infinitihomecare.com",
+          "telephone": "(470) 264-5566",
+          "priceRange": "$35-$95",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1 W Court Square, Suite 750",
+            "addressLocality": "Decatur",
+            "addressRegion": "GA",
+            "postalCode": "30030",
+            "addressCountry": "US"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 33.7748,
+            "longitude": -84.2963
+          },
+          "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday",
+              "Sunday"
+            ],
+            "opens": "00:00",
+            "closes": "23:59"
+          },
+          "sameAs": [
+            "https://www.facebook.com/infinitihomecare",
+            "https://www.linkedin.com/company/infiniti-home-care"
+          ],
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "500"
+          },
+          "areaServed": [
+            {
+              "@type": "City",
+              "name": "Atlanta"
+            },
+            {
+              "@type": "City",
+              "name": "Decatur"
+            },
+            {
+              "@type": "City",
+              "name": "Buckhead"
+            },
+            {
+              "@type": "City",
+              "name": "Marietta"
+            },
+            {
+              "@type": "City",
+              "name": "Alpharetta"
+            },
+            {
+              "@type": "City",
+              "name": "Sandy Springs"
+            },
+            {
+              "@type": "City",
+              "name": "Roswell"
+            }
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Home Care Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Companion Care",
+                  "description": "Friendly companionship and light assistance",
+                  "provider": {
+                    "@type": "Organization",
+                    "name": "INFINITI Home Care Enterprise"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Personal Care",
+                  "description": "Assistance with daily living activities",
+                  "provider": {
+                    "@type": "Organization",
+                    "name": "INFINITI Home Care Enterprise"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Skilled Nursing",
+                  "description": "Licensed nursing care for medical needs",
+                  "provider": {
+                    "@type": "Organization",
+                    "name": "INFINITI Home Care Enterprise"
+                  }
+                }
+              }
+            ]
+          }
+        }
+        </script>
+        
         <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
