@@ -9,6 +9,12 @@ from pydantic import BaseModel, Field, ConfigDict, EmailStr
 from typing import List, Optional
 import uuid
 from datetime import datetime, timezone
+from services.email_service import (
+    email_service,
+    get_care_plan_confirmation_email,
+    get_waitlist_confirmation_email,
+    get_office_notification_email
+)
 
 
 ROOT_DIR = Path(__file__).parent
