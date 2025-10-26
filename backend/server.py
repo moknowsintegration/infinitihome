@@ -234,6 +234,38 @@ async def create_care_plan(input: CarePlanCreate):
     doc['created_at'] = doc['created_at'].isoformat()
     
     await db.care_plans.insert_one(doc)
+    
+    # Send email confirmations
+    try:
+        # User confirmation email
+        email_content = get_care_plan_confirmation_email(
+            name=care_plan.contact_info.name,
+            service_type=care_plan.service_type.replace('_', ' ').title(),
+            weekly_cost=care_plan.weekly_cost,
+            monthly_cost=care_plan.monthly_cost
+        )
+        await email_service.send_email(
+            to_email=care_plan.contact_info.email,
+            subject=email_content['subject'],
+            html_content=email_content['html'],
+            text_content=email_content['text']
+        )
+        
+        # Office notification email
+        office_content = get_office_notification_email(
+            data=doc,
+            submission_type="Care Plan"
+        )
+        await email_service.send_email(
+            to_email=os.environ.get('OFFICE_EMAIL', 'office@infinitihomecare.com'),
+            subject=office_content['subject'],
+            html_content=office_content['html'],
+            text_content=office_content['text']
+        )
+    except Exception as e:
+        logger.error(f"Error sending emails: {str(e)}")
+        # Don't fail the request if email fails
+    
     return care_plan
 
 
