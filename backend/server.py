@@ -291,6 +291,36 @@ async def create_waitlist_entry(input: WaitlistCreate):
     doc['created_at'] = doc['created_at'].isoformat()
     
     await db.waitlist.insert_one(doc)
+    
+    # Send email confirmations
+    try:
+        # User confirmation email
+        email_content = get_waitlist_confirmation_email(
+            name=waitlist_entry.name,
+            waitlist_type=waitlist_entry.waitlist_type
+        )
+        await email_service.send_email(
+            to_email=waitlist_entry.email,
+            subject=email_content['subject'],
+            html_content=email_content['html'],
+            text_content=email_content['text']
+        )
+        
+        # Office notification email
+        office_content = get_office_notification_email(
+            data=doc,
+            submission_type=f"{waitlist_entry.waitlist_type.upper()} Waitlist"
+        )
+        await email_service.send_email(
+            to_email=os.environ.get('OFFICE_EMAIL', 'office@infinitihomecare.com'),
+            subject=office_content['subject'],
+            html_content=office_content['html'],
+            text_content=office_content['text']
+        )
+    except Exception as e:
+        logger.error(f"Error sending emails: {str(e)}")
+        # Don't fail the request if email fails
+    
     return waitlist_entry
 
 
