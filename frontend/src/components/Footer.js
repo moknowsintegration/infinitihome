@@ -8,10 +8,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-2xl font-bold mb-4">INFINITI</h3>
-            <p className="text-gray-400 text-sm mb-4">
-              Home Care Enterprise
-            </p>
+            <img 
+              src="https://customer-assets.emergentagent.com/job_doc-upload-portal/artifacts/p72lg9gm_IFCE%20LOGO%20Transparent.png" 
+              alt="INFINITI Home Care Enterprise"
+              className="h-20 mb-4"
+            />
             <p className="text-gray-400 text-sm">
               Atlanta's Premier Private Home Care Service
             </p>
