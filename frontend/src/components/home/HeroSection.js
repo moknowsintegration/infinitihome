@@ -5,10 +5,12 @@ const HeroSection = () => {
     <section className="bg-gradient-to-br from-purple-50 to-white py-20">
       <div className="container mx-auto px-6">
         <div className="text-center max-w-4xl mx-auto">
-          {/* Main Heading */}
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-            INFINITI
-          </h1>
+          {/* Logo and Main Heading */}
+          <img 
+            src="https://customer-assets.emergentagent.com/job_doc-upload-portal/artifacts/cbdxw1p3_Infiniti%20purple%20logo%20website.png" 
+            alt="INFINITI Home Care Enterprise"
+            className="h-32 md:h-40 mx-auto mb-6"
+          />
           <p className="text-2xl md:text-3xl font-semibold text-purple-600 mb-4">
             Atlanta's Premier Private Home Care Service
           </p>
