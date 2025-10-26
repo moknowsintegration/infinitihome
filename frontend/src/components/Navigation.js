@@ -11,8 +11,11 @@ const Navigation = () => {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <div className="text-2xl font-bold text-gradient">INFINITI</div>
-            <span className="ml-2 text-sm text-gray-600">Home Care Enterprise</span>
+            <img 
+              src="https://customer-assets.emergentagent.com/job_doc-upload-portal/artifacts/cbdxw1p3_Infiniti%20purple%20logo%20website.png" 
+              alt="INFINITI Home Care Enterprise"
+              className="h-12 md:h-16"
+            />
           </Link>
 
           {/* Desktop Menu */}
