@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import HeroSection from '@/components/home/HeroSection';
-import UrgentCareBanner from '@/components/home/UrgentCareBanner';
+// UrgentCareBanner removed - no longer needed
 import ServicesSection from '@/components/home/ServicesSection';
 import CarePlanCalculator from '@/components/home/CarePlanCalculator';
 import TechnologyShowcase from '@/components/home/TechnologyShowcase';
@@ -26,7 +26,7 @@ const HomePage = () => {
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
-      <UrgentCareBanner />
+      {/* UrgentCareBanner removed from here */}
       <HeroSection />
       <ServicesSection />
       <CarePlanCalculator openWaitlistModal={openWaitlistModal} />
