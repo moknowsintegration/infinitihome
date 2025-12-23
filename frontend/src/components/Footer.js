@@ -9,7 +9,7 @@ const Footer = () => {
           {/* Company Info */}
           <div>
             <img 
-              src="https://customer-assets.emergentagent.com/job_doc-upload-portal/artifacts/p72lg9gm_IFCE%20LOGO%20Transparent.png" 
+              src="/infiniti_logo_white.png" 
               alt="INFINITI Home Care Enterprise"
               className="h-20 mb-4"
             />
