@@ -7,6 +7,10 @@ import MedicaidPage from '@/pages/MedicaidPage';
 import PeachstatePage from '@/pages/PeachstatePage';
 import PrivatePayPage from '@/pages/PrivatePayPage';
 import LTCInsurancePage from '@/pages/LTCInsurancePage';
+import AboutPage from '@/pages/AboutPage';
+import ContactPage from '@/pages/ContactPage';
+import CareersPage from '@/pages/CareersPage';
+import BlogPage from '@/pages/BlogPage';
 
 function App() {
   return (
@@ -20,6 +24,10 @@ function App() {
           <Route path="/peachstate" element={<PeachstatePage />} />
           <Route path="/private-pay" element={<PrivatePayPage />} />
           <Route path="/ltc-insurance" element={<LTCInsurancePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/careers" element={<CareersPage />} />
+          <Route path="/blog" element={<BlogPage />} />
         </Routes>
       </BrowserRouter>
     </div>
