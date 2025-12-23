@@ -13,7 +13,7 @@ const Navigation = () => {
           {/* Logo - will be pushed in from left due to container padding */}
           <Link to="/" className="flex items-center">
             <img 
-              src="https://customer-assets.emergentagent.com/job_doc-upload-portal/artifacts/cbdxw1p3_Infiniti%20purple%20logo%20website.png" 
+              src="/infiniti_logo_purple.png" 
               alt="INFINITI Home Care Enterprise"
               className="h-14 md:h-16 object-contain"
             />
