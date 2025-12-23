@@ -16,6 +16,12 @@ from services.email_service import (
     get_office_notification_email
 )
 
+# Configure logging FIRST
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
@@ -28,11 +34,20 @@ db = client[os.environ['DB_NAME']]
 # Create the main app without a prefix
 app = FastAPI()
 
-python# CORS Middleware - MUST be added right after app creation
+# ============ CORS MIDDLEWARE - MUST BE RIGHT AFTER app = FastAPI() ============
+# Get CORS origins from environment variable or allow all
+cors_origins = os.environ.get('CORS_ORIGINS', '*')
+if cors_origins == '*':
+    allow_origins = ["*"]
+else:
+    allow_origins = [origin.strip() for origin in cors_origins.split(',')]
+
+logger.info(f"CORS Origins configured: {allow_origins}")
+
 app.add_middleware(
     CORSMiddleware,
+    allow_origins=allow_origins,
     allow_credentials=True,
-    allow_origins=os.environ.get('CORS_ORIGINS', '*').split(','),
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -398,12 +413,6 @@ async def get_payment_verifications():
 # Include the router in the main app
 app.include_router(api_router)
 
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-)
-logger = logging.getLogger(__name__)
 
 @app.on_event("shutdown")
 async def shutdown_db_client():
