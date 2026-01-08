@@ -87,6 +87,8 @@ GitHub Push → Railway Detects → Builds App → Deploys
 
 Go to: Railway → infinitihome → Variables
 
+https://railway.com/project/9963a764-070b-4b6a-906b-81b10195fbce/service/ebe8bc51-6cdb-435a-8439-d62da19fb1f9?environmentId=e770be7c-04ff-4d7b-80b5-9df36a34e439
+
 **Required:**
 ```
 MONGO_URL=mongodb+srv://username:password@cluster.mongodb.net/
