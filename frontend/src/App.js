@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import '@/App.css';
+import ScrollToTop from '@/components/ScrollToTop';
 import HomePage from '@/pages/HomePage';
 import MedicareWaitlist from '@/pages/MedicareWaitlist';
 import VAWaitlist from '@/pages/VAWaitlist';
@@ -17,6 +18,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/medicare-waitlist" element={<MedicareWaitlist />} />
