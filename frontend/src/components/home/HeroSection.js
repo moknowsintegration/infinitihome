@@ -32,14 +32,14 @@ const HeroSection = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 mb-12">
-            
+            <a
               href="#calculator"
               className="btn-primary text-center"
               data-testid="build-care-plan-btn"
             >
               Build Your Care Plan
             </a>
-            
+            <a
               href="tel:4702645566"
               className="btn-outline text-center"
               data-testid="schedule-consultation-btn"
