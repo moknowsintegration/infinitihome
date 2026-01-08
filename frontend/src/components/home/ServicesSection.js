@@ -97,13 +97,13 @@ const ServicesSection = () => {
 
                   <div className="border-t pt-6">
                     <p className="text-sm font-semibold text-gray-700 mb-2">
-                      💳 Payment Options for This Service:
+                      Payment Options for This Service:
                     </p>
                     <ul className="text-xs text-gray-600 space-y-1">
-                      <li>✓ Medicaid (check waiver eligibility)</li>
-                      <li>✓ Peachstate Health Plan</li>
-                      <li>✓ Private Pay</li>
-                      <li>✓ Long-Term Care Insurance</li>
+                      <li>&#10003; Medicaid (check waiver eligibility)</li>
+                      <li>&#10003; Peachstate Health Plan</li>
+                      <li>&#10003; Private Pay</li>
+                      <li>&#10003; Long-Term Care Insurance</li>
                     </ul>
                   </div>
                 </div>
