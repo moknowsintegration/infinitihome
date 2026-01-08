@@ -7,6 +7,7 @@ const ServicesSection = () => {
       icon: Heart,
       title: 'Companion Care',
       rate: '$35/hour',
+      image: '/images/services/companion-care.jpg',
       description: 'Friendly companionship and light assistance for independent seniors',
       features: [
         'Meal preparation',
@@ -21,6 +22,7 @@ const ServicesSection = () => {
       icon: User,
       title: 'Personal Care',
       rate: '$38-$48/hour',
+      image: '/images/services/personal-care.jpg',
       description: 'Comprehensive assistance with daily living activities',
       features: [
         'Bathing and grooming assistance',
@@ -35,6 +37,7 @@ const ServicesSection = () => {
       icon: Stethoscope,
       title: 'Skilled Nursing',
       rate: '$48-$95/hour',
+      image: '/images/services/skilled-nursing.jpg',
       description: 'Licensed nursing care for complex medical needs',
       features: [
         'Wound care and IV therapy',
@@ -62,35 +65,47 @@ const ServicesSection = () => {
             return (
               <div
                 key={service.id}
-                className="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition"
+                className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition"
                 data-testid={`service-card-${service.id}`}
               >
-                <div className="flex items-center justify-between mb-4">
-                  <IconComponent className="text-purple-600" size={48} />
-                  <span className="text-2xl font-bold text-purple-600">{service.rate}</span>
+                {/* Service Image */}
+                <div className="h-48 overflow-hidden">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">{service.title}</h3>
-                <p className="text-gray-600 mb-6">{service.description}</p>
                 
-                <ul className="space-y-2 mb-6">
-                  {service.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start">
-                      <Shield className="text-green-500 mr-2 flex-shrink-0 mt-1" size={16} />
-                      <span className="text-sm text-gray-700">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <div className="border-t pt-6">
-                  <p className="text-sm font-semibold text-gray-700 mb-2">
-                    💳 Payment Options for This Service:
-                  </p>
-                  <ul className="text-xs text-gray-600 space-y-1">
-                    <li>✓ Medicaid (check waiver eligibility)</li>
-                    <li>✓ Peachstate Health Plan</li>
-                    <li>✓ Private Pay</li>
-                    <li>✓ Long-Term Care Insurance</li>
+                {/* Card Content */}
+                <div className="p-8">
+                  <div className="flex items-center justify-between mb-4">
+                    <IconComponent className="text-purple-600" size={48} />
+                    <span className="text-2xl font-bold text-purple-600">{service.rate}</span>
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">{service.title}</h3>
+                  <p className="text-gray-600 mb-6">{service.description}</p>
+                  
+                  <ul className="space-y-2 mb-6">
+                    {service.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-start">
+                        <Shield className="text-green-500 mr-2 flex-shrink-0 mt-1" size={16} />
+                        <span className="text-sm text-gray-700">{feature}</span>
+                      </li>
+                    ))}
                   </ul>
+
+                  <div className="border-t pt-6">
+                    <p className="text-sm font-semibold text-gray-700 mb-2">
+                      💳 Payment Options for This Service:
+                    </p>
+                    <ul className="text-xs text-gray-600 space-y-1">
+                      <li>✓ Medicaid (check waiver eligibility)</li>
+                      <li>✓ Peachstate Health Plan</li>
+                      <li>✓ Private Pay</li>
+                      <li>✓ Long-Term Care Insurance</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             );
