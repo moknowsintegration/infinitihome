@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,13 +24,13 @@ const Navigation = () => {
             <Link to="/" className="text-gray-700 hover:text-purple-600 font-medium transition-colors">
               Home
             </Link>
-            <a href="#services" className="text-gray-700 hover:text-purple-600 font-medium transition-colors">
+            <a href="/#services" className="text-gray-700 hover:text-purple-600 font-medium transition-colors">
               Services
             </a>
-            <a href="#calculator" className="text-gray-700 hover:text-purple-600 font-medium transition-colors">
+            <a href="/#calculator" className="text-gray-700 hover:text-purple-600 font-medium transition-colors">
               Calculator
             </a>
-            <a href="#payment-options" className="text-gray-700 hover:text-purple-600 font-medium transition-colors">
+            <a href="/#payment-options" className="text-gray-700 hover:text-purple-600 font-medium transition-colors">
               Payment
             </a>
             <Link to="/about" className="text-gray-700 hover:text-purple-600 font-medium transition-colors">
@@ -47,9 +47,10 @@ const Navigation = () => {
             </Link>
             <a
               href="tel:4702645566"
-              className="bg-gradient-to-r from-purple-500 to-purple-700 text-white px-6 py-2.5 rounded-lg font-semibold hover:shadow-lg transition-all transform hover:scale-105"
+              className="bg-gradient-to-r from-purple-500 to-purple-700 text-white px-6 py-2.5 rounded-lg font-semibold hover:shadow-lg transition-all transform hover:scale-105 flex items-center gap-2"
             >
-              📞 (470) 264-5566
+              <Phone size={18} />
+              (470) 264-5566
             </a>
           </div>
 
@@ -75,21 +76,21 @@ const Navigation = () => {
                 Home
               </Link>
               <a
-                href="#services"
+                href="/#services"
                 className="block px-4 py-3 text-gray-700 hover:bg-purple-50 hover:text-purple-600 font-medium rounded-lg transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 Services
               </a>
               <a
-                href="#calculator"
+                href="/#calculator"
                 className="block px-4 py-3 text-gray-700 hover:bg-purple-50 hover:text-purple-600 font-medium rounded-lg transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 Calculator
               </a>
               <a
-                href="#payment-options"
+                href="/#payment-options"
                 className="block px-4 py-3 text-gray-700 hover:bg-purple-50 hover:text-purple-600 font-medium rounded-lg transition-colors"
                 onClick={() => setIsOpen(false)}
               >
@@ -126,10 +127,11 @@ const Navigation = () => {
               <div className="px-4 pt-4 pb-2">
                 <a
                   href="tel:4702645566"
-                  className="block bg-gradient-to-r from-purple-500 to-purple-700 text-white px-6 py-3 rounded-lg font-semibold text-center hover:shadow-lg transition-all"
+                  className="flex items-center justify-center gap-2 bg-gradient-to-r from-purple-500 to-purple-700 text-white px-6 py-3 rounded-lg font-semibold text-center hover:shadow-lg transition-all"
                   onClick={() => setIsOpen(false)}
                 >
-                  📞 (470) 264-5566
+                  <Phone size={18} />
+                  (470) 264-5566
                 </a>
               </div>
             </div>
