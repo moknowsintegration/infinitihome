@@ -1,4 +1,4 @@
-jsximport { CheckCircle, Star, Shield, Award } from 'lucide-react';
+import { CheckCircle, Star, Shield, Award } from 'lucide-react';
 
 const HeroSection = () => {
   return (
